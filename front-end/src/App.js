@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Footer, Blog, Possibility, Features, WhatGPT3, Header } from './containers';
 import { CTA, Brand, Navbar } from './components';
-
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'tailwindcss/tailwind.css';
 import './App.css';
 
 const App = () => (
