@@ -29,19 +29,22 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require('dotenv').config({path: "./.env"});
-const PORT = process.env.PORT || 6000
+const PORT = process.env.PORT || 4000
 app.use(cors());
 app.use(express.json());
 const dbo = require('./config/db')
- 
+const errorHandler = require("./middleware/error");
+
+dbo();
+
+ // Connecting Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use("/api/private", require("./routes/private"));
+
+// Error Handler Middleware
+app.use(errorHandler);
 
 const server = app.listen(PORT, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
- 
-  });
   console.log(`Server is running on port: ${PORT}`);
 });
 
