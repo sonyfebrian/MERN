@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dbo = require("../config/db");
+
 
 const { register, login, forgotpassword, resetpassword } = require('../controllers/auth')
 

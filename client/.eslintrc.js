@@ -29,10 +29,7 @@ module.exports = {
     'global-require': 0,
     'react/state-in-constructor': 0,
     'import/prefer-default-export': 0,
-    'max-len': [
-      2,
-      550,
-    ],
+    'max-len': ['error', { code: 120 }],
     'no-multiple-empty-lines': [
       'error',
       {
